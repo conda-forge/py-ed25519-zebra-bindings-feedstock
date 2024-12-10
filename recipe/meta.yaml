@@ -1,5 +1,5 @@
 {% set name = "py-ed25519-zebra-bindings" %}
-{% set version = "1.1" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: af962f873db856d39adb0a2236595611bcd4be63a7bec9183c7ace0deb9b2be3
+  sha256: 2d834762c0f471b09a0eacd418bac8dbf16b43e9c118ae93f34eb61e5d01df6d
   patches:
     # - fix-Cargo-pep621.patch
     # - fix-pyproject-pep621.patch
@@ -17,7 +17,7 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vvv
-  number: 1
+  number: 0
 
 requirements:
   build:
