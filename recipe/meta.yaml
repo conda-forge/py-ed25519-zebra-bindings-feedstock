@@ -8,9 +8,6 @@ package:
 source:
   url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 615f736c73cf7222eccdc6c9a025d33fbd5d1d24883943f47607b945d598c8f2
-  patches:
-    # - fix-Cargo-pep621.patch
-    # - fix-pyproject-pep621.patch
 
 build:
   ignore_prefix_files: true
@@ -26,7 +23,7 @@ requirements:
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
   host:
-    - maturin =0.14.17
+    - maturin
     - python
     - pip
     - setuptools-rust
