@@ -14,6 +14,8 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vvv
+  script_env:
+    - PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
   number: 2
 
 requirements:
